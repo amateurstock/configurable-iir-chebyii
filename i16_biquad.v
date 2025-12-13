@@ -17,9 +17,6 @@ module i16_biquad(
 wire signed [35:0] zero_Z = 36'sd0;
 wire signed [31:0] zero_a = 32'sd0;
 
-// scale unsigned 16-bit to signed 16-bit Q1.14 fixed-point
-wire signed [15:0] A_signed;
-
 // Multiplier outputs
 wire signed [31:0] P_b0;
 wire signed [31:0] P_b1;
@@ -37,27 +34,22 @@ wire signed [35:0] Z_0;
 wire signed [35:0] Z_1;
 
 // Module instantiation
-// ---unsigned input converter
-u16_to_i16 u2i(
-    .A(A),
-    .B(A_signed)
-);
 
 // ---Multipliers
 i16_mul mul_b0(
-    .A(A_signed),
+    .A(A),
     .B(b_0),
     .P(P_b0)
 );
 
 i16_mul mul_b1(
-    .A(A_signed),
+    .A(A),
     .B(b_1),
     .P(P_b1)
 );
 
 i16_mul mul_b2(
-    .A(A_signed),
+    .A(A),
     .B(b_2),
     .P(P_b2)
 );
