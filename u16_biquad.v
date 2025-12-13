@@ -11,9 +11,6 @@ module u16_biquad(
     input signed [15:0] a_2
 );
 
-// Some zero'd registers and other misc
-wire signed [35:0] zero_Z = 36'sd0;
-wire signed [33:0] zero_a = 34'sd0;
 wire signed [17:0] feedback;
 wire signed [15:0] A_signed;
 
@@ -72,7 +69,7 @@ i18_mul mul_a2(
 i36_acc ACC_0(
     .A(P_a2),
     .B(P_b2),
-    ._Z(zero_Z),
+    ._Z(36'sd0),
     .S(S_0)
 );
 
@@ -84,7 +81,7 @@ i36_acc ACC_1(
 );
 
 i36_acc ACC_2(
-    .A(zero_a),
+    .A(34'sd0),
     .B(P_b0),
     ._Z(Z_1),
     .S(S_2)
