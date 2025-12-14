@@ -1,4 +1,9 @@
 .nvim/
 .svlangserver/
 .svlangserver
+graph.py
+makefile
+raw_data.txt
+sim.vvp
+waveform.vcd
 

@@ -3,7 +3,8 @@ module u16_to_i16(
     output [15:0] B
 );
 
-assign B = {~A[15], A[14:0]};
+//assign B = {~A[15], A[14:0]};
+assign B = $signed(A) - 16'sd32768;
 
 endmodule
 
