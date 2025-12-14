@@ -74,7 +74,6 @@ end
 initial begin
     $dumpfile ("waveform.vcd");
     $dumpvars (0, t_sos);
-    $dumpvars (0, sos0);
 
     data_file = $fopen("raw_data.txt", "w");
     
